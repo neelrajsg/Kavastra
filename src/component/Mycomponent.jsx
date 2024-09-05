@@ -432,7 +432,7 @@ const MyComponent = () => {
                 </button> */}
               </div>
               <div>
-                <p className="mt-0 mb-8 pt-8 pb-10">
+                <p className="mt-0 mb-10 pt-8 pb-10">
                   <h3 className="font-bold ">For Retailers</h3>
                   Discover top-quality products at competitive prices, all from
                   trusted wholesalers. Enjoy the ease of secure payments and
