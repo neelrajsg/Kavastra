@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import Header from "./Header";
+import Features from "./Features";
+import BasicForm from "./Basicform";
 
 const MyComponent = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
   return (
     <>
       <meta charSet="UTF-8" />
@@ -25,112 +26,7 @@ const MyComponent = () => {
         }}
       />
       <div className="bg-[#f8f9ff] text-black text-[15px]">
-        <header className="py-4 px-4 sm:px-10 z-50 min-h-[70px]">
-          <div className="relative flex flex-wrap items-center gap-4">
-            <a href="javascript:void(0)">
-              {/* <h1 className=" ">KAVASTRA</h1> */}
-              <img
-                src="../k.svg"
-                alt="logo"
-                className="w-36  bg-transparent "
-              />
-            </a>
-            <div
-              id="collapseMenu"
-              className="max-lg:hidden lg:!block max-lg:fixed max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50 z-50"
-            >
-              <button
-                id="toggleClose"
-                className="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-4 fill-black"
-                  viewBox="0 0 320.591 320.591"
-                >
-                  <path
-                    d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
-                    data-original="#000000"
-                  />
-                  <path
-                    d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
-                    data-original="#000000"
-                  />
-                </svg>
-              </button>
-              <ul className="lg:ml-12 lg:flex gap-x-6 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
-                <li className="mb-6 hidden max-lg:block">
-                  <a href="javascript:void(0)">
-                    <img
-                      src="https://readymadeui.com/readymadeui.svg"
-                      alt="logo"
-                      className="w-36"
-                    />
-                  </a>
-                </li>
-                <li className="max-lg:border-b max-lg:py-3 px-3">
-                  <a
-                    href="javascript:void(0)"
-                    className="hover:text-blue-600 text-blue-600 block font-semibold transition-all"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li className="max-lg:border-b max-lg:py-3 px-3">
-                  <a
-                    href="#about-section"
-                    className="hover:text-blue-600 block font-semibold transition-all"
-                  >
-                    About
-                  </a>
-                </li>
-                <li className="max-lg:border-b max-lg:py-3 px-3">
-                  <a
-                    href="#features"
-                    className="hover:text-blue-600 block font-semibold transition-all"
-                  >
-                    Feature
-                  </a>
-                </li>
-                <li className="max-lg:border-b max-lg:py-3 px-3">
-                  <a
-                    href="#wholsalers"
-                    className="hover:text-blue-600 block font-semibold transition-all"
-                  >
-                    Wholsalers
-                  </a>
-                </li>
-                <li className="max-lg:border-b max-lg:py-3 px-3">
-                  <a
-                    href="#retailers"
-                    className="hover:text-blue-600 block font-semibold transition-all"
-                  >
-                    Retailers
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="flex ml-auto">
-              <button className="px-6 py-3 rounded-xl text-white bg-cyan-900 transition-all hover:bg-cyan-800">
-                Enquire
-              </button>
-              <button id="toggleOpen" className="lg:hidden ml-7">
-                <svg
-                  className="w-7 h-7"
-                  fill="#000"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </header>
+        <Header />
         <div className="relative">
           <div className="px-4 sm:px-10">
             <div className="mt-16 max-w-4xl mx-auto text-center relative z-10">
@@ -164,11 +60,13 @@ const MyComponent = () => {
                 className="w-28 mx-auto"
                 alt="facebook-logo"
               />
-              <img
-                src="https://readymadeui.com/linkedin-logo.svg"
-                className="w-28 mx-auto"
-                alt="linkedin-logo"
-              />
+              <a href="https://www.linkedin.com/company/kavastra/">
+                <img
+                  src="https://readymadeui.com/linkedin-logo.svg"
+                  className="w-28 mx-auto"
+                  alt="linkedin-logo"
+                />
+              </a>
               <img
                 src="https://readymadeui.com/pinterest-logo.svg"
                 className="w-28 mx-auto"
@@ -198,7 +96,8 @@ const MyComponent = () => {
               id="features-section"
               className="bg-gray-100 py-16 px-6 md:px-12"
             >
-              <div className="max-w-6xl mx-auto">
+              <Features />
+              {/* <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
                   <h1 className="text-4xl font-bold mb-4">Our Features</h1>
                   <p className="text-xl text-muted-foreground mb-8">
@@ -239,7 +138,7 @@ const MyComponent = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* <div className="grid lg:grid-cols-3 md:grid-cols-2 max-md:max-w-lg mx-auto gap-8">
@@ -432,7 +331,7 @@ const MyComponent = () => {
                 </button> */}
               </div>
               <div>
-                <p className="mt-0 mb-10 pt-8 pb-10">
+                <p className="mt-8 mb-8 pt-8 pb-10">
                   <h3 className="font-bold ">For Retailers</h3>
                   Discover top-quality products at competitive prices, all from
                   trusted wholesalers. Enjoy the ease of secure payments and
@@ -1394,9 +1293,11 @@ const MyComponent = () => {
                   Let's Talk
                 </h1>
                 <p className="mt-6">
-                  Have some big idea or brand to develop and need help? Then
-                  reach out we'd love to hear about your project and provide
-                  help.
+                  Have a big idea or a brand you'd love to develop? Need help
+                  bringing your vision to life? We’d love to hear from you!
+                  Whether you're a retailer looking to grow your business, a
+                  wholesaler seeking new opportunities, or anyone with a project
+                  in the textile industry, we’re here to assist.
                 </p>
                 <div className="mt-12">
                   <h2 className="text-xl font-semibold">Email</h2>
@@ -1421,7 +1322,9 @@ const MyComponent = () => {
                         className="text-[#007bff] ml-3"
                       >
                         <small className="block">Mail</small>
-                        <strong>neelrajsg@gmail.com.com</strong>
+                        <strong>neelrajsg@gmail.com</strong>
+                        <small className="block">Mobile</small>
+                        <strong>+91 9731849325</strong>
                       </a>
                     </li>
                   </ul>
@@ -1446,7 +1349,7 @@ const MyComponent = () => {
                       </a>
                     </li>
                     <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                      <a href="javascript:void(0)">
+                      <a href="https://www.linkedin.com/company/kavastra/">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20px"
@@ -1477,45 +1380,13 @@ const MyComponent = () => {
                   </ul>
                 </div>
               </div>
-              <form
-                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfExwInjSgJmu-DnRySHMtu_IbRlR1U-vCzY2R_zuGqNAXtjg/formResponse"
-                method="POST"
-                className="ml-auo space-y-4"
-              >
-                <input
-                  type="text"
-                  placeholder="Name"
-                  name="entry.1477386675"
-                  className="w-full rounded-md py-3 px-4 bg-[#f8f9ff] outline-cyan-900"
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  name="entry.1477386675"
-                  className="w-full rounded-md py-3 px-4 bg-[#f8f9ff] outline-cyan-900"
-                />
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  name="entry.91152738"
-                  className="w-full rounded-md py-3 px-4 bg-[#f8f9ff] outline-cyan-900"
-                />
-                <textarea
-                  placeholder="Message"
-                  rows={6}
-                  name="entry.1477061385"
-                  className="w-full rounded-md px-4 bg-[#f8f9ff] pt-3 outline-cyan-900"
-                  defaultValue={""}
-                />
-                <button
-                  type="submit"
-                  className="w-full mt-6 px-6 py-3 rounded-xl text-white bg-cyan-900 transition-all hover:bg-cyan-800"
-                >
-                  Send
-                </button>
-              </form>
+              <div>
+                <img src="https://png.pngtree.com/png-vector/20231015/ourmid/pngtree-connect-with-us-for-financial-assistance-torn-png-image_10215859.png" />
+              </div>
+              {/* <BasicForm /> */}
             </div>
           </div>
+
           {/* <div className="bg-blue-100 py-20 sm:px-6 px-4 rounded-md mt-32">
             <div className="max-w-4xl w-full mx-auto text-center">
               <h2 className="md:text-4xl text-3xl font-extrabold">
